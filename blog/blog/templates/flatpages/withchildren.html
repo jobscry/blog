@@ -1,0 +1,24 @@
+{% extends "flatpages/default.html" %}
+
+{% load markup bleach_tags flatpages %}
+
+{% block content_title %}{% endblock content_title %}
+
+{% block content %}
+<div class="row-fluid">
+    <div class="span9">
+<h2>{{ flatpage.title }}</h2>
+{{ flatpage.content|markdown|bleach }}
+    </div>
+    <div class="span3">
+{% get_flatpages flatpage.url as sub_pages %}
+        <ul class="nav nav-pills nav-stacked pull-right">
+    {% for page in sub_pages  %}
+        {% if not forloop.first %}
+            <li><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></li>            
+        {% endif %}
+    {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}

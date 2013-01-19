@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% load markup bleach_tags flatpage_utils %}
+
+{% block title %}{{ flatpage.title }}{% endblock title %}
+
+{% block breadcrumbs %}{{ flatpage.url|fpcrumbs:flatpage.title }}{% endblock breadcrumbs %}
+
+{% block content_title %}<h2>{{ flatpage.title }}</h2>{% endblock content_title %}
+
+{% block content %}{{ flatpage.content|markdown|bleach }}{% endblock content %}

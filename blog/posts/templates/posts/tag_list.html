@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block title %}Tags{% endblock title %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb">
+    <li><a href="{% url post_list %}" title="Blog">Blog</a> <span class="divider">/</span></li>
+    {% if tag %}
+    <li><a href="{% url tag_list %}" title="Tags">Tags</a> <span class="divider">/</span></li>
+    <li class="active">{{ tag }}</li>
+    {% else %}
+    <li class="active">Tags</li>
+    {% endif %}
+</ul>
+{% endblock breadcrumbs %}
+
+{% block content_title %}<h2>Tags</h2>{% endblock content_title %}
+
+{% block content %}
+<p>
+    {% for tag in tag_list  %}
+<a href="{% url tag_detail tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+</p>
+    {% if tag %}
+        {% with post_list.count as post_count %}
+<h3>{{ post_count|apnumber|title }} Post{{ post_count|pluralize }} tagged <em>{{ tag }}</em></h3>
+        {% endwith %}
+    {% endif %}
+<ol>
+    {% for post in post_list  %}
+    <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock content %}

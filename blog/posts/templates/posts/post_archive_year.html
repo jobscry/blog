@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Archive {{ year }}{% endblock title %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb">
+    <li><a href="{% url post_list %}" title="Blog">Blog</a> <span class="divider">/</span></li>
+    <li><a href="{% url archive_index %}" title="Archive">Archive</a> <span class="divider">/</span></li>
+    <li class="active">{{ year }}</li>
+</ul>
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+<h2>Archive {{ year }}</h2>
+{% endblock content_title %}
+
+{% block content %}
+<ul>
+    {% for month in date_list  %}
+    <li><a href="{% url archive_month month.year month.month %}" title="{{ month|date:"F" }} {{ month|date:"Y" }}">{{ month|date:"F" }}</a></li>   
+    {% endfor %}
+</ul>
+{% endblock content %}

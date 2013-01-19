@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block title %}Archive {{ month|date:"F Y" }}{% endblock title %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb">
+    <li><a href="{% url post_list %}" title="Blog">Blog</a> <span class="divider">/</span></li>
+    <li><a href="{% url archive_index %}" title="Archive">Archive</a> <span class="divider">/</span></li>
+    <li><a href="{% url archive_year month.year %}" title="Archive {{ month.year }}">{{ month.year }}</a> <span class="divider">/</span></li>
+    <li class="active">{{ month|date:"F" }}</li>
+</ul>
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+<h2>Archive {{ month|date:"F Y" }}</h2>
+{% endblock content_title %}
+
+{% block content %}
+    {% with post_list.count as post_count  %}
+<h3>{{ post_count|apnumber|title }} Post{{ post_count|pluralize }}</h3> 
+    {% endwith %}
+<ol>
+    {% for post in post_list  %}
+    <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock content %}
