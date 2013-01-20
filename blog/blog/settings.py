@@ -194,7 +194,8 @@ if DEBUG:
     INSTALLED_APPS += ('debug_toolbar',)
     INTERNAL_IPS = ('127.0.0.1',)
 
-#try:
-#    from live_settings import *
-#except ImportError:
-#    pass
+else:
+    try:
+        from live_settings import *
+    except ImportError:
+        pass
