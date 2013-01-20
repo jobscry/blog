@@ -21,22 +21,22 @@ class Command(NoArgsCommand):
         interactive = int(options.get("interactive", 0))
         no_data = int(options.get("nodata", 0))
         syncdb.Command().execute(**options)
-        if settings.USE_SOUTH:
-            try:
-                from south.management.commands import migrate
-            except ImportError:
-                return
-            if interactive:
-                confirm = raw_input("\nWould you like to fake initial "
-                                    "migrations? (yes/no): ")
-                while True:
-                    if confirm == "yes":
-                        break
-                    elif confirm == "no":
-                        return
-                    confirm = raw_input("Please enter either 'yes' or 'no': ")
-            if verbosity >= 1:
-                print
-                print "Faking initial migrations ..."
-                print
-            migrate.Command().execute(fake=True)
+        try:
+            from south.management.commands import migrate
+        except ImportError:
+            return
+
+        if interactive:
+            confirm = raw_input("\nWould you like to fake initial "
+                                "migrations? (yes/no): ")
+            while True:
+                if confirm == "yes":
+                    break
+                elif confirm == "no":
+                    return
+                confirm = raw_input("Please enter either 'yes' or 'no': ")
+        if verbosity >= 1:
+            print
+            print "Faking initial migrations ..."
+            print
+        migrate.Command().execute(fake=True)

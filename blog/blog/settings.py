@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'django_bleach',
     'taggit',
     'compressor',
+    'blog',
     'posts',
 )
 
