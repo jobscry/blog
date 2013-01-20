@@ -185,18 +185,13 @@ AUTHOR = 'Author'
 COPYRIGHT = '&copy; 2012 Author'
 
 
-if DEBUG:
-    try:
-        from local_settings import *
-    except ImportError:
-        pass
+try:
+    from local_settings import *
+except ImportError:
+    pass
 
+
+if DEBUG:
     MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS += ('debug_toolbar',)
     INTERNAL_IPS = ('127.0.0.1',)
-
-else:
-    try:
-        from live_settings import *
-    except ImportError:
-        pass
