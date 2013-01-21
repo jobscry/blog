@@ -2,6 +2,5 @@
 *.db
 *.pyc
 local_settings.py
-media/
-static/
 deploy/
+media/
