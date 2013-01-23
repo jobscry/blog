@@ -9,7 +9,6 @@ from contextlib import contextmanager
 from fabric.api import env, cd, prefix, sudo as _sudo, run as _run, hide, task
 from fabric.contrib.files import exists, upload_template
 from fabric.colors import yellow, green, blue, red
-from fabric.context_managers import settings as fabric_settings
 
 
 ################
@@ -447,8 +446,7 @@ def restart():
     """
     pid_path = "%s/gunicorn.pid" % env.proj_path
     if exists(pid_path):
-        with fabric_settings(warn_only=True):
-            sudo("kill -HUP `cat %s`" % pid_path)
+        sudo("kill -HUP `cat %s`" % pid_path)
     else:
         start_args = (env.proj_name, env.proj_name)
         sudo("supervisorctl start %s:gunicorn_%s" % start_args)
