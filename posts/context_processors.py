@@ -8,7 +8,8 @@ def site(request):
         'site': Site.objects.get_current(),
         'path': request.get_full_path(),
         'description': getattr(settings, 'DESCRIPTION', 'This is a blog.'),
-        'copyright': getattr(settings, 'COPYRIGHT', '')
+        'copyright': getattr(settings, 'COPYRIGHT', ''),
+        'tracking_code': getattr(settings, 'TRACKING_CODE', '')
     }
 
 
