@@ -176,7 +176,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "posts.context_processors.flatpages",
 )
 
-BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a']
+BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'dd', 'dt', 'dl']
 BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title']
 BLEACH_ALLOWED_STYLES = []
 BLEACH_STRIP_TAGS = True
