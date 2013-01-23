@@ -18,7 +18,11 @@ sitemaps = {
 
 
 class PostView(object):
-    queryset = Post.objects.filter(draft=False)
+    def get_queryset(self):
+        if(self.request.user.is_authenticated()):
+            return Post.objects.filter(author=self.request.user)
+        else:
+            return Post.objects.filter(draft=False)
 
     def get_context_data(self, **kwargs):
         context = super(PostView, self).get_context_data(**kwargs)
