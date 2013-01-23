@@ -46,7 +46,7 @@
     <div id="footer">
         <div class="container-narrow">
             <hr>
-            <p class="muted"><a href="{% url post_list %}" title="Blog">Blog</a> | {% for page in flatpages  %}<a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>{% if not forloop.last %} | {% endif %}{% endfor %}</p>
+            <p class="muted"><a href="{% url post_list %}" title="Blog">Blog</a>{% if flatpages %} | {% for page in flatpages  %}<a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>{% if not forloop.last %} | {% endif %}{% endfor %}{% endif %}</p>
             <p class="muted">{{ copyright|safe }}</p>
         </div>
     </div>
