@@ -177,7 +177,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'dd', 'dt', 'dl', 'li', 'code', 'blockquote', 'abbr', 'img', 'table', 'tr', 'td', 'th']
-BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'src']
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'src', 'class', 'height', 'width']
 BLEACH_ALLOWED_STYLES = []
 BLEACH_STRIP_TAGS = True
 BLEACH_STRIP_COMMENTS = False
