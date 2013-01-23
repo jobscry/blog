@@ -110,9 +110,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 
-# Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'blog.wsgi.application'
-
 TEMPLATE_DIRS = (
     os.path.join(DIRNAME, 'templates'),
 )
@@ -174,9 +171,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    "blog.context_processors.site",
-    "blog.context_processors.options",
-    "blog.context_processors.flatpages",
+    "posts.context_processors.site",
+    "posts.context_processors.options",
+    "posts.context_processors.flatpages",
 )
 
 BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a']
