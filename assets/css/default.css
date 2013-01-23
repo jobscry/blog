@@ -19,3 +19,11 @@ h1, h2, h3, h4, h5, h6 {
 a, p, ul {
   font-family: 'Ubuntu', sans-serif;
 }
+
+img.pull-left {
+    padding-right: 5px;
+}
+
+img.pull-right {
+    padding-left: 5px;
+}
