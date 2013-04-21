@@ -6,7 +6,7 @@
 
 {% block breadcrumbs %}
 <ul class="breadcrumb">
-  <li><a href="{% url post_list %}" title="home">Blog</a> <span class="divider">/</span></li>
+  <li><a href="{% url "post_list" %}" title="home">Blog</a> <span class="divider">/</span></li>
   <li class="active">{{ post.title }}</li>
 </ul>
 {% endblock breadcrumbs %}
@@ -15,7 +15,7 @@
 <article id="post_{{ post.slug }}">
     <h2><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a> <small>{{ post.published|date }}</small></h2>
     <p class="muted">
-        <i class="icon-user"></i> {{ post.author }} <i class="icon-tags"></i>{% for tag in post.tags.all  %} <a href="{% url tag_detail tag.name %}">{{ tag.name }}</a>{% if not forloop.last %},{% endif %} {% endfor %}
+        <i class="icon-user"></i> {{ post.author }} <i class="icon-tags"></i>{% for tag in post.tags.all  %} <a href="{% url "tag_detail" tag.name %}">{{ tag.name }}</a>{% if not forloop.last %},{% endif %} {% endfor %}
     </p>
     {{ post.body|markdown|bleach }}
 </article>

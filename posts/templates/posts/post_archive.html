@@ -4,7 +4,7 @@
 
 {% block breadcrumbs %}
 <ul class="breadcrumb">
-    <li><a href="{% url post_list %}" title="Blog">Blog</a> <span class="divider">/</span></li>
+    <li><a href="{% url "post_list" %}" title="Blog">Blog</a> <span class="divider">/</span></li>
     <li class="active">Archive</li>
 </ul>
 {% endblock breadcrumbs %}
@@ -13,7 +13,7 @@
 <h2>Archive</h2>
 <ul>
     {% for year in date_list  %}
-    <li><a href="{% url archive_year year.year %}" title="{{ year|date:"Y" }}">{{ year|date:"Y" }}</a></li>
+    <li><a href="{% url "archive_year" year.year %}" title="{{ year|date:"Y" }}">{{ year|date:"Y" }}</a></li>
     {% endfor %}
 </ul>
 {% endblock content_title %}

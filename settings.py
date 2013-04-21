@@ -176,6 +176,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "posts.context_processors.flatpages",
 )
 
+ALLOWED_HOSTS = (
+    'www.imjoevasquez.com',
+    'imjoevasquez.com'
+)
+
 BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'ul', 'ol', 'dd', 'dt', 'dl', 'li', 'code', 'blockquote', 'abbr', 'img', 'table', 'tr', 'td', 'th']
 BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'src', 'class', 'height', 'width']
 BLEACH_ALLOWED_STYLES = []

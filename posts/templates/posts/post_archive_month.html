@@ -6,9 +6,9 @@
 
 {% block breadcrumbs %}
 <ul class="breadcrumb">
-    <li><a href="{% url post_list %}" title="Blog">Blog</a> <span class="divider">/</span></li>
-    <li><a href="{% url archive_index %}" title="Archive">Archive</a> <span class="divider">/</span></li>
-    <li><a href="{% url archive_year month.year %}" title="Archive {{ month.year }}">{{ month.year }}</a> <span class="divider">/</span></li>
+    <li><a href="{% url "post_list" %}" title="Blog">Blog</a> <span class="divider">/</span></li>
+    <li><a href="{% url "archive_index" %}" title="Archive">Archive</a> <span class="divider">/</span></li>
+    <li><a href="{% url "archive_year" month.year %}" title="Archive {{ month.year }}">{{ month.year }}</a> <span class="divider">/</span></li>
     <li class="active">{{ month|date:"F" }}</li>
 </ul>
 {% endblock breadcrumbs %}

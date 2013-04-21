@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/default.css">
 {% endcompress %}
-    <link href="{% url feed %}" type="application/atom+xml" rel="alternate" title="Feed">
+    <link href="{% url "feed" %}" type="application/atom+xml" rel="alternate" title="Feed">
     {% block extra_head %}{% endblock extra_head %}
 </head>
 <body>
@@ -46,7 +46,7 @@
     <div id="footer">
         <div class="container-narrow">
             <hr>
-            <p class="muted"><a href="{% url post_list %}" title="Blog">Blog</a>{% if flatpages %} | {% for page in flatpages  %}<a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>{% if not forloop.last %} | {% endif %}{% endfor %}{% endif %}</p>
+            <p class="muted"><a href="{% url "post_list" %}" title="Blog">Blog</a>{% if flatpages %} | {% for page in flatpages  %}<a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>{% if not forloop.last %} | {% endif %}{% endfor %}{% endif %}</p>
             <p class="muted">{{ copyright|safe }}</p>
         </div>
     </div>
