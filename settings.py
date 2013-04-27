@@ -191,7 +191,7 @@ SNIPPET_LENGTH = 140
 PAGINATE_BY = 20
 DESCRIPTION = 'This is a cool blog.'
 AUTHOR = 'Author'
-COPYRIGHT = '&copy; 2012 Author'
+COPYRIGHT = '&copy; 2013 Author'
 
 
 try:
