@@ -192,6 +192,11 @@ PAGINATE_BY = 20
 DESCRIPTION = 'This is a cool blog.'
 AUTHOR = 'Author'
 COPYRIGHT = '&copy; 2013 Author'
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+]
+COMPRESS_STORAGE = 'compressor.storage.GzipCompressorFileStorage'
 
 
 try:
