@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row-fluid">
-    <div class="span9">
+<div class="row">
+    <div class="col-xs-12 col-md-10">
 {% block post_left %}{% endblock post_left %}
     </div>
-    <div class="span3">
+    <div class="col-xs-12 col-md-2">
         <ul class="nav nav-pills nav-stacked pull-right">
             <li><a href="{% url "tag_list" %}" title="Tags">Tags</a></li>
             <li><a href="{% url "archive_index" %}" Title="Archive">Archive</a></li>
