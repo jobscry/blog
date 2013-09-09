@@ -7,8 +7,8 @@
     <meta name="description" content="{{ description }}">
     <title>{{ site.name }}: {% block title %}Hello World{% endblock title %}</title>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
-{% compress css %}
     <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+{% compress css %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/default.css">
 {% endcompress %}
     <link href="{% url "feed" %}" type="application/atom+xml" rel="alternate" title="Feed">
