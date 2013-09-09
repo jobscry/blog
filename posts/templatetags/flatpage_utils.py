@@ -21,5 +21,5 @@ def fpcrumbs(url, title, autoescape=None):
         for page in pages:
             fp = FlatPage.objects.filter(url='/' + page + '/')
             if fp:
-                string = u'%s<li><a href="%s" title="%s">%s</a> <span class="divider">/</span></li>' % (string, fp[0].url, fp[0].title, fp[0].title)
+                string = u'%s<li><a href="%s" title="%s">%s</a></li>' % (string, fp[0].url, fp[0].title, fp[0].title)
     return mark_safe(u'%s<li class="active">%s</li></ul>' % (string, title))
