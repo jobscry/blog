@@ -21,7 +21,7 @@
 {% block content %}
 <p>
     {% for tag in tag_list  %}
-<a href="{% url "tag_detail" tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+<span class="glyphicon glyphicon-tag"></span> <a href="{% url "tag_detail" tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
     {% endfor %}
 </p>
     {% if tag %}
