@@ -449,7 +449,7 @@ def restart():
         sudo("kill -HUP `cat %s`" % pid_path)
     else:
         start_args = (env.proj_name, env.proj_name)
-        sudo("supervisorctl start %s:gunicorn_%s" % start_args)
+        sudo("supervisorctl restart %s:gunicorn_%s" % start_args)
 
 
 @task
