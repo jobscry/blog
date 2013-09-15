@@ -1,4 +1,4 @@
-Django==1.5.3
+Django==1.5.4
 Fabric==1.7.0
 Markdown==2.3.1
 South==0.8.2
